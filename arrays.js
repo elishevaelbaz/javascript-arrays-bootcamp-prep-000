@@ -45,18 +45,6 @@ function removeElementFromBeginningOfArray(array){
  }
   
 function removeElementFromEndOfArray(array){
-  var newArray = array.slice(-1)
+  var newArray = array.slice(0, array.length-1)
   return newArray
 }
-', () => {
-    it('removes the last element from the array', () => {
-      expect(removeElementFromEndOfArray([1, 2, 3])).to.eql([1, 2])
-    })
-    
-    it('does not alter the original array', () => {
-      const array = [1, 2, 3];
-      removeElementFromEndOfArray(array);
-      expect(array).to.eql([1, 2, 3]);
-    })
-  })
-})
